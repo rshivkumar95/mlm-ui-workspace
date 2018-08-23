@@ -512,3 +512,163 @@ var activate = function(){
         }
     
 }
+
+
+var fetchMember = function(type){
+
+    console.log(type);
+    if(type=='filter'){
+        filterBy = document.getElementById('filter-by').value;
+        filterValue = document.getElementById('filter-value').value;
+        document.getElementById('filter-by-error').innerHTML='';
+        document.getElementById('filter-value-error').innerHTML='';
+
+        if(filterBy=='')
+        {
+          document.getElementById('filter-by-error').innerHTML='This Field is Mandatory';
+          return;
+        }
+        if(filterValue=='')
+        {
+            document.getElementById('filter-value-error').innerHTML='This Field is Mandatory';
+            return;
+        }
+
+    }
+    
+    //"mobileNumber":"9975475712" / "aadharNumber":"" / "directSellerId":""/ "directSellerName":""
+        
+    var params = {
+        apiversion : Connection.getApiVersion(),
+        passKey : Connection.getPassKey(),
+        userId : sessionStorage.getItem('userId'),
+	    userRole:"Admin",
+    }
+
+    console.log(typeof filterBy);
+    if(typeof filterBy != 'undefined'){
+
+        if(filterBy=='Mobile')
+    {
+        params.mobileNumber = filterValue;
+    }
+    if(filterBy=='Aadhar')
+    {
+        params.aadharNumber = filterValue;
+    }
+    if(filterBy=='Direct Seller Id')
+    {
+        params.directSellerId = filterValue;
+    }
+    if(filterBy=='Direct Seller Name')
+    {
+        params.directSellerName = filterValue;
+    }
+
+    }
+    
+    console.log('Params');
+    console.log(params);
+   
+    const http = new XMLHttpRequest()
+    http.open('POST', Connection.getRequestUrl('fetch/user'))
+    http.setRequestHeader('Content-type', 'application/json')
+    http.send(JSON.stringify(params)) 
+    http.onload = function () {           
+        var response = JSON.parse(http.responseText);
+        console.log(response);
+        if(response.HasErrors){
+            var error='';
+            for(var i in response.Errors){
+                error = error + response.Errors[i].Message;
+                if(i<response.Errors.length-1)
+                    error=error+' ,';
+            }
+            alert(error);    
+        }
+        else{
+           console.log(response);
+           if(type=='filter')
+              document.getElementById('members').removeChild(document.getElementById('members').lastChild);
+            var tbody = document.createElement('tbody');
+            for(var i in response.userList){
+                
+                var tr = document.createElement('tr');
+                
+                var td1 = document.createElement('td');
+                var textnode1 = document.createTextNode(response.userList[i].userId);
+                td1.appendChild(textnode1);
+                tr.appendChild(td1);
+                
+                var td2 = document.createElement('td');
+                var d = new Date(response.userList[i].confirmationDate)
+                if(response.userList[i].confirmationDate==null)
+                    var confirmationDate='';
+                else
+                    var confirmationDate = d.getDate()+'/'+d.getMonth()+'/'+d.getFullYear();
+                var textnode2 = document.createTextNode(confirmationDate);
+                td2.appendChild(textnode2);
+                tr.appendChild(td2);
+                
+                var td3 = document.createElement('td');
+                var d = new Date(response.userList[i].dateOfBirth)
+                if(response.userList[i].dateOfBirth==null)
+                    var dateOfBirth='';
+                else
+                    var dateOfBirth = d.getDate()+'/'+d.getMonth()+'/'+d.getFullYear();
+                var textnode3 = document.createTextNode(dateOfBirth);
+                td3.appendChild(textnode3);
+                tr.appendChild(td3);
+                
+                var td4 = document.createElement('td');
+                var textnode4 = document.createTextNode(response.userList[i].directSellerId==null?'':response.userList[i].directSellerId);
+                td4.appendChild(textnode4);
+                tr.appendChild(td4);
+                
+                var td5 = document.createElement('td');
+                var d = new Date(response.userList[i].joiningDate)
+                if(response.userList[i].joiningDate==null)
+                    var joiningDate='';
+                else
+                    var joiningDate = d.getDate()+'/'+d.getMonth()+'/'+d.getFullYear();
+                var textnode5 = document.createTextNode(joiningDate);
+                td5.appendChild(textnode5);
+                tr.appendChild(td5);
+                
+                var td6 = document.createElement('td');
+                var textnode6 = document.createTextNode(response.userList[i].mobile);
+                td6.appendChild(textnode6);
+                tr.appendChild(td6);
+                
+                var td7 = document.createElement('td');
+                var textnode7 = document.createTextNode(response.userList[i].name);
+                td7.appendChild(textnode7);
+                tr.appendChild(td7);
+                
+                var td8 = document.createElement('td');
+                var textnode8 = document.createTextNode(response.userList[i].parentId);
+                td8.appendChild(textnode8);
+                tr.appendChild(td8);
+                
+                var td9 = document.createElement('td');
+                var status;
+                if(response.userList[i].statusId==1)
+                   status = 'Active';
+                if(response.userList[i].statusId==2)
+                   status = 'Inactive';
+                if(response.userList[i].statusId==3)
+                   status = 'Verification Pending';
+                if(response.userList[i].statusId==4)
+                   status = 'Deleted';
+                var textnode9 = document.createTextNode(status);
+                td9.appendChild(textnode9);
+                tr.appendChild(td9);
+                
+                tbody.appendChild(tr);
+            }
+            
+            document.getElementById('members').appendChild(tbody);
+        }
+    }
+
+}

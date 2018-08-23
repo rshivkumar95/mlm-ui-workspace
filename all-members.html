@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
     <!-- Required meta tags-->
     <meta charset="UTF-8">
@@ -39,7 +38,7 @@
 <body class="animsition">
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
-       <header class="header-mobile d-block d-lg-none">
+        <header class="header-mobile d-block d-lg-none">
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
@@ -274,7 +273,7 @@
         <!-- PAGE CONTAINER-->
         <div class="page-container">
             <!-- HEADER DESKTOP-->
-           
+            
             <!-- HEADER DESKTOP-->
 
             <!-- MAIN CONTENT-->
@@ -285,40 +284,67 @@
                             <div class="col-md-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h2 class="title-1">Transfer EPin</h2>
+                                        <h2 class="title-1">All Members</h2>
                                     </div>
                                     
                                     <div class="card-body">
-                                        <div class="row form-group">
-                                              <div class="col col-md-3">
-                                                    <label for="request-to" class=" form-control-label">Request To (ID)</label>
-                                              </div>
-                                              <div class="col-12 col-md-9">
-                                                    <input placeholder="Request To (ID)" type="number" id="request-to" class="form-control">
-                                                    <small class="form-text text-muted" id="request-to-error"></small>
-                                               </div>
-                                        </div>
-                                        <div class="row form-group">
-                                              <div class="col col-md-3">
-                                                    <label for="epin-count" class=" form-control-label">Total Epin Count</label>
-                                              </div>
-                                              <div class="col-12 col-md-9">
-                                                    <input placeholder="Total Epin" type="number" id="epin-count" class="form-control">                                                        
-                                                    <small class="form-text text-muted" id="epin-count-error"></small>
-                                               </div>
-                                        </div>
-                                        <div class="row form-group">
-                                              <div class="col col-md-3">
-                                                    <label for="epin-cost" class=" form-control-label">Cost</label>
-                                              </div>
-                                              <div class="col-12 col-md-9">
-                                                    <input placeholder="Epin Cost" type="number" id="epin-cost" class="form-control">                                                        
-                                                    <small class="form-text text-muted" id="epin-cost-error"></small>
-                                               </div>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary btn-sm" onclick="Epin.request();">
-                                                   Request
-                                        </button>
+                                       <div class="row">
+                                            <div class="col-sm-5">
+
+                                                    <div class="row form-group">
+                                                            <div class="col col-md-3">
+                                                                  <label for="filter-by" class=" form-control-label">Filter By</label>
+                                                            </div>
+                                                            <div class="col-12 col-md-9">
+                                                                    <select name="select" id="filter-by" class="form-control" >
+                                                                            <option value="">Please select</option>
+                                                                            <option>Mobile</option>
+                                                                            <option>Aadhar</option>
+                                                                            <option>Direct Seller Id</option>
+                                                                            <option>Direct Seller Name</option>
+                                                                                                                                 
+                                                                    </select>
+                                                                  <small class="form-text text-muted" id="filter-by-error"></small>
+                                                             </div>
+                                                      </div>
+                                               
+                                            </div>
+                                           <div class="col-sm-5">
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                              <label for="filter-value" class=" form-control-label">Filter Value</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                              <input placeholder="Filter Value" type="text" id="filter-value" class="form-control">
+                                                              <small class="form-text text-muted" id="filter-value-error"></small>
+                                                         </div>
+                                                  </div>
+                                           </div>
+                                           <div class="col-sm-2">
+
+                                                <button type="submit" class="btn btn-primary btn-sm" onclick="fetchMember('filter');">
+                                                    Search
+                                                </button>
+                                               
+                                            </div>
+                                           
+                                       </div> 
+                                       <table id="members" class="table table-striped table-bordered" style="width:100%">
+                                           <thead>
+                                            <tr style="font-size:12px;">
+                                                <th>User ID</th>                                                
+                                                <th>Confirmation Date</th>
+                                                <th>DOB</th>
+                                                <th>Direct Seller Id</th>
+                                                <th>Joining Date</th>
+                                                <th>Mobile</th>
+                                                <th>Name</th>
+                                                <th>Parent Id</th>                                                
+                                                <th>Status</th>
+                                               
+                                            </tr>
+                                        </thead>
+                                       </table>
                                     </div>                                    
                                 </div>
                             </div>
@@ -365,29 +391,17 @@
     <script src="js/main.js"></script>
     <script src="js/controllers/connection.js"></script>
     <script src="js/controllers/main.js"></script>
-    <script src="js/controllers/epin.js"></script>
-    <script src="js/controllers/joining-kit.js"></script>
-    <script>
-      (function(){
-          
-          Joining.fetch().then(function(data){
-                    
-                    console.log(data);
-                    var select = document.getElementById('profile-kitid');
-                    for(var i in data.joiningKit){
+    <script src="js/controllers/member.js"></script>
 
-                            var option = document.createElement('option');
-                            var att = document.createAttribute('value');
-                            att.value = data.joiningKit[i].joiningKitId;
-                            option.setAttributeNode(att);
-                            var textNode = document.createTextNode(data.joiningKit[i].kitName);
-                            option.appendChild(textNode);
-                            select.appendChild(option);                        
-                        }
-                    });
-          
-      })();  
+    <script>
+        
+        (function(){
+                fetchMember('all');
+        })();
+
     </script>
+    
+   
      
 
 </body>
