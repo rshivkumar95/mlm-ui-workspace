@@ -293,7 +293,10 @@
                                                     <label for="epin" class=" form-control-label">Epin</label>
                                               </div>
                                               <div class="col-12 col-md-9">
-                                                    <input placeholder="Epin" type="text" id="epin" class="form-control">
+                                                    <select name="select" id="epin" class="form-control" >
+                                                            <option value="">Please select</option>
+                                                                                                      
+                                                    </select>
                                                     <small class="form-text text-muted" id="epin-error"></small>
                                                </div>
                                         </div>
@@ -357,6 +360,27 @@
     <script src="js/controllers/connection.js"></script>
     <script src="js/controllers/main.js"></script>
     <script src="js/controllers/member.js"></script>
+    <script src="js/controllers/epin.js"></script>
+
+    <script>
+            (function(){
+                
+                Epin.fetchUnused().then(function(data){
+                    
+                    console.log(data);
+                    var select = document.getElementById('epin');
+                    for(var i in data.EPinList){
+
+                            var option = document.createElement('option');
+                            var textNode = document.createTextNode(data.EPinList[i].epin);
+                            option.appendChild(textNode);
+                            select.appendChild(option);                        
+                        }
+                    });
+                
+                
+            })();
+    </script>
     
    
     

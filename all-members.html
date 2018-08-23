@@ -290,14 +290,14 @@
                                     <div class="card-body">
                                        <div class="row">
                                             <div class="col-sm-5">
-
                                                     <div class="row form-group">
                                                             <div class="col col-md-3">
                                                                   <label for="filter-by" class=" form-control-label">Filter By</label>
                                                             </div>
                                                             <div class="col-12 col-md-9">
-                                                                    <select name="select" id="filter-by" class="form-control" >
-                                                                            <option value="">Please select</option>
+                                                                    <select name="select" id="filter-by" class="form-control" onchange="filterChange();">
+                                                                            <option value="">All Members</option>
+                                                                            <option>Status</option>
                                                                             <option>Mobile</option>
                                                                             <option>Aadhar</option>
                                                                             <option>Direct Seller Id</option>
@@ -309,7 +309,25 @@
                                                       </div>
                                                
                                             </div>
-                                           <div class="col-sm-5">
+                                            <div class="col-sm-5" id="status-div" style="display:none;">
+                                                    <div class="row form-group">
+                                                            <div class="col col-md-3">
+                                                                  <label for="filter-by" class=" form-control-label">Status</label>
+                                                            </div>
+                                                            <div class="col-12 col-md-9">
+                                                                    <select name="select" id="filter-status" class="form-control" >
+                                                                            <option value="">Please select</option>
+                                                                            <option value="Active">Active</option>
+                                                                            <option value="Inactive">Inactive</option>
+                                                                            <option value="VERIFICATION_PENDING">Verification Pending</option>
+                                                                            <option value="Deleted">Deleted</option>                                                    
+                                                                    </select>
+                                                                  <small class="form-text text-muted" id="filter-status-error"></small>
+                                                             </div>
+                                                      </div>
+                                               
+                                            </div>
+                                           <div class="col-sm-5" id="filter-value-div" style="display:none;">
                                                 <div class="row form-group">
                                                         <div class="col col-md-3">
                                                               <label for="filter-value" class=" form-control-label">Filter Value</label>
@@ -398,6 +416,24 @@
         (function(){
                 fetchMember('all');
         })();
+        var filterChange = function(){
+
+            var filterBy = document.getElementById('filter-by').value;
+            if(filterBy==''){
+                fetchMember('all');
+                document.getElementById('status-div').style.display='none';
+                document.getElementById('filter-value-div').style.display='none';
+                
+            }
+            else if(filterBy=='Status'){
+                document.getElementById('status-div').style.display='block';
+                document.getElementById('filter-value-div').style.display='none';
+            }
+            else {
+                document.getElementById('status-div').style.display='none';
+                document.getElementById('filter-value-div').style.display='block';
+            }
+        }
 
     </script>
     

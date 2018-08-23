@@ -517,22 +517,37 @@ var activate = function(){
 var fetchMember = function(type){
 
     console.log(type);
-    if(type=='filter'){
+    if(type=='filter' && document.getElementById('filter-by').value!='Status'){
         filterBy = document.getElementById('filter-by').value;
         filterValue = document.getElementById('filter-value').value;
         document.getElementById('filter-by-error').innerHTML='';
         document.getElementById('filter-value-error').innerHTML='';
 
-        if(filterBy=='')
-        {
-          document.getElementById('filter-by-error').innerHTML='This Field is Mandatory';
-          return;
-        }
+       // if(filterBy=='')
+       // {
+       //   document.getElementById('filter-by-error').innerHTML='This Field is Mandatory';
+       //   return;
+       // }
         if(filterValue=='')
         {
             document.getElementById('filter-value-error').innerHTML='This Field is Mandatory';
             return;
         }
+
+    }
+
+    if(type=='filter' && document.getElementById('filter-by').value=='Status'){
+        filterBy = document.getElementById('filter-by').value;
+        
+        //document.getElementById('filter-by-error').innerHTML='';
+       
+
+        //if(filterBy=='')
+       // {
+       //   document.getElementById('filter-by-error').innerHTML='This Field is Mandatory';
+       //   return;
+       // }
+        
 
     }
     
@@ -563,6 +578,15 @@ var fetchMember = function(type){
     if(filterBy=='Direct Seller Name')
     {
         params.directSellerName = filterValue;
+    }
+    if(filterBy=='Status' && type!='all'){
+        var status = document.getElementById('filter-status').value;
+        document.getElementById('filter-status-error').innerHTML='';
+        if(status==''){
+            document.getElementById('filter-status-error').innerHTML='Please Select Valid Status';
+            return;
+        }
+        params.status = status;
     }
 
     }

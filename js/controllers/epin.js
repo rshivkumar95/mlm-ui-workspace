@@ -170,6 +170,45 @@ var Epin = {
         }
         
         
+    },
+    fetchUnused : function(){
+
+        return new Promise(function(resolve,reject){
+
+            const params = {
+                apiversion : Connection.getApiVersion(),
+                passKey : Connection.getPassKey(),
+                userRole:"Admin",
+                pinStatus:"UNUSED",
+                perPagePins:"10",
+                pageNo:"1"
+                
+            }
+            console.log('Params');
+            console.log(params);
+           
+            const http = new XMLHttpRequest()
+            http.open('POST', Connection.getRequestUrl('epinretrieval'))
+            http.setRequestHeader('Content-type', 'application/json')
+            http.send(JSON.stringify(params)) 
+            http.onload = function () {           
+                var response = JSON.parse(http.responseText);
+                console.log(response);
+                if(response.HasErrors){
+                    var error='';
+                    for(var i in response.Errors){
+                        error = error + response.Errors[i].Message;
+                        if(i<response.Errors.length-1)
+                            error=error+' ,';
+                    }
+                    alert(error);    
+                }
+                else{
+                   resolve(response);
+                }
+            }
+    
+        });
     }
 }
 
