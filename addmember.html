@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Dashboard</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all">
+
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+        <header class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" href="index.html">
+                           <!-- <img src="images/icon/logo.png" alt="CoolAdmin" /> -->
+                            MLM
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+                        <li>
+                            <a href="dashboard.html">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>                           
+                        </li>
+
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fa fa-user"></i>Members</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="all-members.html">All Members</a>
+                                </li>
+                                <li>
+                                    <a href="addmember.html">Add New Member</a>
+                                </li>
+                                <li>
+                                    <a href="profile.html">Member Profile</a>
+                                </li>
+                                <li>
+                                    <a href="activate.html">Activate Member</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-chart-bar"></i>Genealogy</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="direct-downline.html">Direct Downline</a>
+                                </li>
+                                <li>
+                                    <a href="level-downline.html">Level Downline</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-map-marker-alt"></i>EPIN</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="epin-generation.html">Genrate EPIN</a>
+                                </li>
+                                <li>
+                                    <a href="available-epin.html">Available EPIN</a>
+                                </li>
+                                <li>
+                                    <a href="transfer-epin.html">Transfer EPIN</a>
+                                </li>
+
+                                <li>
+                                    <a href="request-epin.html">EPIN Request</a>
+                                </li>
+                            </ul>
+                        </li> 
+
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                            <i class="fas fa-copy"></i>Product</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="joiningkits.html">Available Joining Kits</a>
+                                </li>
+                                <li>
+                                    <a href="add-joining-kit.html">Add Joining Kit</a>
+                                </li>
+                                <li>
+                                    <a href="add-product.html">Add Product</a>
+                                </li>
+                                <li>
+                                    <a href="add-category.html">Add Category</a>
+                                </li>
+                                <li>
+                                    <a href="add-subcategory.html">Add SubCategory</a>
+                                </li>
+                            </ul>
+                        </li> 
+
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                            <i class="fas fa-calendar-alt"></i>Password</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="change-password.html">Change Password</a>
+                                </li>
+                            </ul>
+                        </li> 
+
+                        <li>
+                            <a href="logout.html">
+                                <i class="zmdi zmdi-power"></i>Logout</a>
+                        </li>
+                       
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href="#">
+                   <!--  <img src="images/icon/logo.png" alt="Cool Admin" /> -->
+                    <h1>MLM</h1>
+
+                </a>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                         <li>
+                            <a href="dashboard.html">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>                           
+                        </li>
+
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fa fa-user"></i>Members</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="all-members.html">All Members</a>
+                                </li>
+                                <li>
+                                    <a href="addmember.html">Add New Member</a>
+                                </li>
+                                <li>
+                                    <a href="profile.html">Member Profile</a>
+                                </li>
+                                <li>
+                                    <a href="activate.html">Activate Member</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-chart-bar"></i>Genealogy</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="direct-downline.html">Direct Downline</a>
+                                </li>
+                                <li>
+                                    <a href="level-downline.html">Level Downline</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-map-marker-alt"></i>EPIN</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="epin-generation.html">Genrate EPIN</a>
+                                </li>
+                                <li>
+                                    <a href="available-epin.html">Available EPIN</a>
+                                </li>
+                                <li>
+                                    <a href="transfer-epin.html">Transfer EPIN</a>
+                                </li>
+
+                                <li>
+                                    <a href="request-epin.html">EPIN Request</a>
+                                </li>
+                            </ul>
+                        </li> 
+
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                            <i class="fas fa-copy"></i>Product</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="joiningkits.html">Available Joining Kits</a>
+                                </li>
+                                <li>
+                                    <a href="add-joining-kit.html">Add Joining Kit</a>
+                                </li>
+                                <li>
+                                    <a href="add-product.html">Add Product</a>
+                                </li>
+                                <li>
+                                    <a href="add-category.html">Add Category</a>
+                                </li>
+                                <li>
+                                    <a href="add-subcategory.html">Add SubCategory</a>
+                                </li>
+                            </ul>
+                        </li> 
+
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                            <i class="fas fa-calendar-alt"></i>Password</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="change-password.html">Change Password</a>
+                                </li>
+                            </ul>
+                        </li> 
+
+                        <li>
+                            <a href="logout.html">
+                                <i class="zmdi zmdi-power"></i>Logout</a>
+                        </li>                       
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            
+            <!-- HEADER DESKTOP-->
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="title-1">Add Member</h2>
+                                    </div>
+                                    
+                                    <div class="card-body">
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+											<li class="nav-item"  onclick="showprofile()">
+												<span class="nav-link active show" id="profile-tab"><i class="fa fa-user"></i> Profile</span>
+											</li>
+											<li class="nav-item" onclick="validateprofile()">
+												<span class="nav-link" id="nominee-tab"><i class="fa fa-users"></i> Nominee</span>
+											</li>
+											<li class="nav-item" onclick="validatenominee()">
+												<span class="nav-link" id="bank-tab"><i class="fa fa-inr"></i> Bank</span>
+											</li>
+								        </ul>
+                                        <div class="tab-content pl-3 p-1" id="myTabContent">
+											<div class="tab-pane fade active show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+												
+                                                <!-- PROFILE ELEMENTS -->
+                                                
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="profile-name" class=" form-control-label">Name</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="text" id="profile-name" name="text-input" placeholder="Name" class="form-control">
+                                                            <small class="form-text text-muted" id="profile-name-error"></small>
+                                                        </div>
+                                                </div>
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="profile-fathername" class=" form-control-label">Father Name</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="text" id="profile-fathername" name="text-input" placeholder="Father Name" class="form-control">
+                                                            <small class="form-text text-muted" id="profile-fathername-error"></small>
+                                                        </div>
+                                                </div>
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="profile-mothername" class=" form-control-label">Mother Name</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="text" id="profile-mothername" name="text-input" placeholder="Mother Name" class="form-control">
+                                                            <small class="form-text text-muted" id="profile-mothername-error"></small>
+                                                        </div>
+                                                </div>
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="profile-dob" class=" form-control-label">Date of Birth</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="date" id="profile-dob" name="text-input" placeholder="Date Of Birth" class="form-control">
+                                                            <small class="form-text text-muted" id="profile-dob-error"></small>
+                                                        </div>
+                                                </div>
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="profile-gender" class=" form-control-label">Gender</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                        <select name="select" id="profile-gender" class="form-control">
+                                                           <option value="">Please select</option>
+                                                           <option>Male</option>
+                                                           <option>Female</option>                                                       
+                                                        </select>
+                                                            <small class="form-text text-muted" id="profile-gender-error"></small>
+                                                        </div>
+                                                </div>
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="profile-marital" class=" form-control-label">Marital Status</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                        <select name="select" id="profile-marital" class="form-control">
+                                                           <option value="">Please select</option>
+                                                           <option>Single</option>
+                                                           <option>Married</option>                                                       
+                                                        </select>
+                                                            <small class="form-text text-muted" id="profile-marital-error"></small>
+                                                        </div>
+                                                </div>
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="profile-mobile" class=" form-control-label">Mobile</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="text" id="profile-mobile" name="text-input" placeholder="Mobile" class="form-control">
+                                                            <small class="form-text text-muted" id="profile-mobile-error"></small>
+                                                        </div>
+                                                </div>
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="profile-email" class=" form-control-label">Email</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="email" id="profile-email" name="text-input" placeholder="Email" class="form-control">
+                                                            <small class="form-text text-muted" id="profile-email-error"></small>
+                                                        </div>
+                                                </div>                                                
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="profile-address" class=" form-control-label">Address</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">                                                            
+                                                            <textarea name="textarea-input" id="profile-address" rows="4" placeholder="Aaddress" class="form-control"></textarea>
+                                                            <small class="form-text text-muted" id="profile-address-error"></small>
+                                                        </div>
+                                                </div>                                                
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="profile-city" class=" form-control-label">City</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="text" id="profile-city" name="text-input" placeholder="City" class="form-control">
+                                                            <small class="form-text text-muted" id="profile-city-error"></small>
+                                                        </div>
+                                                </div>
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="profile-state" class=" form-control-label">State</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                        <select name="select" id="profile-state" class="form-control">
+                                                            <option value="">- Select State -</option>
+                                                            <option>Andaman and Nicobar Islands</option>
+                                                            <option>Andhra Pradesh</option>
+                                                            <option>Arunachal Pradesh</option>
+                                                            <option>Assam</option>
+                                                            <option>Bihar</option>
+                                                            <option>Chandigarh</option>
+                                                            <option>Chhattisgarh</option>
+                                                            <option>Dadra and Nagar Haveli</option>
+                                                            <option>Daman and Diu</option>
+                                                            <option>Delhi/NCR</option>
+                                                            <option>Goa</option>
+                                                            <option>Gujarat</option>
+                                                            <option>Haryana</option>
+                                                            <option>Himanchal Pradesh</option>
+                                                            <option>Jammu and Kashmir</option>
+                                                            <option>Jharkhand</option>
+                                                            <option>Karnataka</option>
+                                                            <option>Kerala</option>
+                                                            <option>Lakshadweep</option>
+                                                            <option>Madhya Pradesh</option>
+                                                            <option selected="selected" >Maharashtra</option>
+                                                            <option>Manipur</option>
+                                                            <option>Meghalaya</option>
+                                                            <option>Mizoram</option>
+                                                            <option>Nagaland</option>
+                                                            <option>Orissa</option>
+                                                            <option>Pondicherry</option>
+                                                            <option>Punjab</option>
+                                                            <option>Rajasthan</option>
+                                                            <option>Sikkim</option>
+                                                            <option>Tamil Nadu</option>
+                                                            <option>Telangana</option>
+                                                            <option>Tripura</option>
+                                                            <option>Uttar Pradesh</option>
+                                                            <option>Uttaranchal</option>
+                                                            <option>West Bengal</option>                                                      
+                                                        </select>
+                                                            <small class="form-text text-muted" id="profile-state-error"></small>
+                                                        </div>
+                                                </div>
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="profile-country" class=" form-control-label">Country</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="text" id="profile-country" name="text-input" placeholder="Country" class="form-control">
+                                                            <small class="form-text text-muted" id="profile-country-error"></small>
+                                                        </div>
+                                                </div>
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="profile-pincode" class=" form-control-label">Pincode</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="number" id="profile-pincode" name="text-input" placeholder="Pincode" class="form-control">
+                                                            <small class="form-text text-muted" id="profile-pincode-error"></small>
+                                                        </div>
+                                                </div>
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="profile-adhar" class=" form-control-label">Adhar Number</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="number" id="profile-adhar" name="text-input" placeholder="Adhar Number" class="form-control">
+                                                            <small class="form-text text-muted" id="profile-adhar-error"></small>
+                                                        </div>
+                                                </div>
+                                                <hr/>
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="profile-username" class=" form-control-label">Username</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="text" id="profile-username" name="text-input" placeholder="Username" class="form-control">
+                                                            <small class="form-text text-muted" id="profile-username-error"></small>
+                                                        </div>
+                                                </div>
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="profile-password" class=" form-control-label">Password</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="password" id="profile-password" name="text-input" placeholder="Password" class="form-control">
+                                                            <small class="form-text text-muted" id="profile-password-error"></small>
+                                                        </div>
+                                                </div>
+                                                <hr/>
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="profile-epin" class=" form-control-label">Epin</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="text" id="profile-epin" name="text-input" placeholder="Epin" class="form-control">
+                                                            <small class="form-text text-muted" id="profile-epin-error"></small>
+                                                        </div>
+                                                </div>
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="profile-kitid" class=" form-control-label">Kit Id</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            
+                                                            <select name="select" id="profile-kitid" class="form-control">
+                                                           <option value="">Please select</option>
+                                                                                                                 
+                                                        </select>
+                                                            <small class="form-text text-muted" id="profile-kitid-error"></small>
+                                                        </div>
+                                                </div>
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="profile-parentid" class=" form-control-label">Parent Id</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="text" id="profile-parentid" name="text-input" placeholder="Parent Id" class="form-control">
+                                                            <small class="form-text text-muted" id="profile-parentid-error"></small>
+                                                        </div>
+                                                </div>
+                                                
+                                                <button type="submit" class="btn btn-primary btn-sm" onclick="validateprofile();">
+                                                    <i class="fa fa-dot-circle-o"></i> Next
+                                                </button>
+                                       
+                                                
+											</div>
+											<div class="tab-pane fade" id="nominee" role="tabpanel" aria-labelledby="nominee-tab">
+												<!-- Nominee -->
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="nominee-name" class=" form-control-label">Name</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="text" id="nominee-name" name="text-input" placeholder="Name" class="form-control">
+                                                            <small class="form-text text-muted" id="nominee-name-error"></small>
+                                                        </div>
+                                                </div>
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="nominee-relation" class=" form-control-label">Relation</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="text" id="nominee-relation" name="text-input" placeholder="Relation" class="form-control">
+                                                            <small class="form-text text-muted" id="nominee-relation-error"></small>
+                                                        </div>
+                                                </div>
+                                                 <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="nominee-dob" class=" form-control-label">Date of Birth</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="date" id="nominee-dob" name="text-input" placeholder="Date Of Birth" class="form-control">
+                                                            <small class="form-text text-muted" id="nominee-dob-error"></small>
+                                                        </div>
+                                                </div>
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="nominee-address" class=" form-control-label">Address</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">                                                            
+                                                            <textarea name="textarea-input" id="nominee-address" rows="4" placeholder="Aaddress" class="form-control"></textarea>
+                                                            <small class="form-text text-muted" id="nominee-address-error"></small>
+                                                        </div>
+                                                </div>
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="nominee-city" class=" form-control-label">City</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="text" id="nominee-city" name="text-input" placeholder="City" class="form-control">
+                                                            <small class="form-text text-muted" id="nominee-city-error"></small>
+                                                        </div>
+                                                </div>
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="nominee-state" class=" form-control-label">State</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                        <select name="select" id="nominee-state" class="form-control">
+                                                            <option value="">- Select State -</option>
+                                                            <option>Andaman and Nicobar Islands</option>
+                                                            <option>Andhra Pradesh</option>
+                                                            <option>Arunachal Pradesh</option>
+                                                            <option>Assam</option>
+                                                            <option>Bihar</option>
+                                                            <option>Chandigarh</option>
+                                                            <option>Chhattisgarh</option>
+                                                            <option>Dadra and Nagar Haveli</option>
+                                                            <option>Daman and Diu</option>
+                                                            <option>Delhi/NCR</option>
+                                                            <option>Goa</option>
+                                                            <option>Gujarat</option>
+                                                            <option>Haryana</option>
+                                                            <option>Himanchal Pradesh</option>
+                                                            <option>Jammu and Kashmir</option>
+                                                            <option>Jharkhand</option>
+                                                            <option>Karnataka</option>
+                                                            <option>Kerala</option>
+                                                            <option>Lakshadweep</option>
+                                                            <option>Madhya Pradesh</option>
+                                                            <option selected="selected" >Maharashtra</option>
+                                                            <option>Manipur</option>
+                                                            <option>Meghalaya</option>
+                                                            <option>Mizoram</option>
+                                                            <option>Nagaland</option>
+                                                            <option>Orissa</option>
+                                                            <option>Pondicherry</option>
+                                                            <option>Punjab</option>
+                                                            <option>Rajasthan</option>
+                                                            <option>Sikkim</option>
+                                                            <option>Tamil Nadu</option>
+                                                            <option>Telangana</option>
+                                                            <option>Tripura</option>
+                                                            <option>Uttar Pradesh</option>
+                                                            <option>Uttaranchal</option>
+                                                            <option>West Bengal</option>                                                      
+                                                        </select>
+                                                            <small class="form-text text-muted" id="nominee-state-error"></small>
+                                                        </div>
+                                                </div>
+                                                
+                                                
+                                                <button type="submit" class="btn btn-primary btn-sm" onclick="validatenominee();">
+                                                    <i class="fa fa-dot-circle-o"></i> Next
+                                                </button>
+											</div>
+											<div class="tab-pane fade" id="bank" role="tabpanel" aria-labelledby="bank-tab">
+												<div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="bank-name" class=" form-control-label">Bank Name</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="text" id="bank-name" name="text-input" placeholder="Bank Name" class="form-control">
+                                                            <small class="form-text text-muted" id="bank-name-error"></small>
+                                                        </div>
+                                                </div>
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="bank-branch" class=" form-control-label">Branch Name</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="text" id="bank-branch" name="text-input" placeholder="Branch Name" class="form-control">
+                                                            <small class="form-text text-muted" id="bank-branch-error"></small>
+                                                        </div>
+                                                </div>
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="bank-account" class=" form-control-label">Account Number</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="number" id="bank-account" name="text-input" placeholder="Account Number" class="form-control">
+                                                            <small class="form-text text-muted" id="bank-account-error"></small>
+                                                        </div>
+                                                </div>
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="bank-pan" class=" form-control-label">PAN Number</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="text" id="bank-pan" name="text-input" placeholder="PAN Number" class="form-control">
+                                                            <small class="form-text text-muted" id="bank-pan-error"></small>
+                                                        </div>
+                                                </div>
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="bank-ifsc" class=" form-control-label">IFSC Number</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                            <input type="text" id="bank-ifsc" name="text-input" placeholder="IFSC Number" class="form-control">
+                                                            <small class="form-text text-muted" id="bank-ifsc-error"></small>
+                                                        </div>
+                                                </div>
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="bank-acctype" class=" form-control-label">Account Type</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">
+                                                        <select name="select" id="bank-acctype" class="form-control">
+                                                           <option value="">Please select</option>
+                                                           <option>Current</option>
+                                                           <option>Saving</option>                                                       
+                                                        </select>
+                                                            <small class="form-text text-muted" id="bank-acctype-error"></small>
+                                                        </div>
+                                                </div>
+                                                 <button type="submit" class="btn btn-primary btn-sm" onclick="register();">
+                                                    <i class="fa fa-dot-circle-o"></i> ADD
+                                                </button>
+											</div>
+				                       </div>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>                                               
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="copyright">
+                                    <p>Copyright © 2018 AllyLabs Technologies. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END MAIN CONTENT-->
+            <!-- END PAGE CONTAINER-->
+        </div>
+
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="vendor/slick/slick.min.js">
+    </script>
+    <script src="vendor/wow/wow.min.js"></script>
+    <script src="vendor/animsition/animsition.min.js"></script>
+    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="vendor/select2/select2.min.js">
+    </script>
+
+    <!-- Main JS-->
+    <script src="js/main.js"></script>
+    <script src="js/controllers/connection.js"></script>
+    <script src="js/controllers/main.js"></script>
+    <script src="js/controllers/member.js"></script>
+    <script src="js/controllers/joining-kit.js"></script>
+    <script>
+      (function(){
+          
+          Joining.fetch().then(function(data){
+                    
+                    console.log(data);
+                    var select = document.getElementById('profile-kitid');
+                    for(var i in data.joiningKit){
+
+                            var option = document.createElement('option');
+                            var att = document.createAttribute('value');
+                            att.value = data.joiningKit[i].joiningKitId;
+                        option.setAttributeNode(att);
+                            var textNode = document.createTextNode(data.joiningKit[i].kitName);
+                            option.appendChild(textNode);
+                            select.appendChild(option);                        
+                        }
+                    });
+          
+      })();  
+    </script>
+
+</body>
+
+</html>
+<!-- end document-->
