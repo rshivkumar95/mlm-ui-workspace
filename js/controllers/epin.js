@@ -209,6 +209,60 @@ var Epin = {
             }
     
         });
+    },
+    transfer : function(){
+
+        var transferto = document.getElementById('transfer-to').value;
+        var epins = document.getElementById('epins');
+        var selectedEpins = [];
+        for(var i=0;i<epins.options.length; i++){
+          if(epins.options[i].selected)
+          selectedEpins.push(epins.options[i].value);
+        }
+
+        if(transferto==''){
+            document.getElementById('transfer-to-error').innerHTML = 'This field is mandatory';
+            return;
+        }
+        if(selectedEpins==''){
+            document.getElementById('epins-error').innerHTML = 'Please select epins';
+            return;
+        }
+        const params = {
+            apiversion : Connection.getApiVersion(),
+            passKey : Connection.getPassKey(),
+            userId:sessionStorage.getItem('userId'),
+	        transferTo:"Level User",
+            levelUserId:transferto,
+	        epins : selectedEpins
+            
+        }
+        console.log('Params');
+        console.log(params);
+       
+        const http = new XMLHttpRequest()
+        http.open('POST', Connection.getRequestUrl('transfer/epin'))
+        http.setRequestHeader('Content-type', 'application/json')
+        http.send(JSON.stringify(params)) 
+        http.onload = function () {           
+            var response = JSON.parse(http.responseText);
+            console.log(response);
+            if(response.HasErrors){
+                var error='';
+                for(var i in response.Errors){
+                    error = error + response.Errors[i].Message;
+                    if(i<response.Errors.length-1)
+                        error=error+' ,';
+                }
+                alert(error);    
+            }
+            else{
+                alert('Epins Transfered');
+                window.location.href = 'dashboard.html';
+            }
+        }
+
+
     }
 }
 

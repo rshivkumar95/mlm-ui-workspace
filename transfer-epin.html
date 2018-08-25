@@ -285,39 +285,32 @@
                             <div class="col-md-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h2 class="title-1">Transfer EPin</h2>
+                                        <h2 class="title-1">Transfer EPins</h2>
                                     </div>
                                     
                                     <div class="card-body">
                                         <div class="row form-group">
                                               <div class="col col-md-3">
-                                                    <label for="request-to" class=" form-control-label">Request To (ID)</label>
+                                                    <label for="transfer-to" class=" form-control-label">Transfer To (ID)</label>
                                               </div>
                                               <div class="col-12 col-md-9">
-                                                    <input placeholder="Request To (ID)" type="number" id="request-to" class="form-control">
-                                                    <small class="form-text text-muted" id="request-to-error"></small>
+                                                    <input placeholder="Transfer To (ID)" type="number" id="transfer-to" class="form-control">
+                                                    <small class="form-text text-muted" id="transfer-to-error"></small>
                                                </div>
                                         </div>
                                         <div class="row form-group">
-                                              <div class="col col-md-3">
-                                                    <label for="epin-count" class=" form-control-label">Total Epin Count</label>
-                                              </div>
-                                              <div class="col-12 col-md-9">
-                                                    <input placeholder="Total Epin" type="number" id="epin-count" class="form-control">                                                        
-                                                    <small class="form-text text-muted" id="epin-count-error"></small>
-                                               </div>
+                                                <div class="col col-md-3">
+                                                    <label for="epins" class=" form-control-label">Select Epins</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                <select name="select" id="epins" class="form-control"  multiple>
+                                                                                                   
+                                                </select>
+                                                    <small class="form-text text-muted" id="epins-error"></small>
+                                                </div>
                                         </div>
-                                        <div class="row form-group">
-                                              <div class="col col-md-3">
-                                                    <label for="epin-cost" class=" form-control-label">Cost</label>
-                                              </div>
-                                              <div class="col-12 col-md-9">
-                                                    <input placeholder="Epin Cost" type="number" id="epin-cost" class="form-control">                                                        
-                                                    <small class="form-text text-muted" id="epin-cost-error"></small>
-                                               </div>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary btn-sm" onclick="Epin.request();">
-                                                   Request
+                                        <button type="submit" class="btn btn-primary btn-sm" onclick="Epin.transfer();">
+                                                   Transfer
                                         </button>
                                     </div>                                    
                                 </div>
@@ -366,27 +359,28 @@
     <script src="js/controllers/connection.js"></script>
     <script src="js/controllers/main.js"></script>
     <script src="js/controllers/epin.js"></script>
-    <script src="js/controllers/joining-kit.js"></script>
+    
     <script>
-      (function(){
-          
-          Joining.fetch().then(function(data){
+            (function(){
+                
+                Epin.fetchUnused().then(function(data){
                     
                     console.log(data);
-                    var select = document.getElementById('profile-kitid');
-                    for(var i in data.joiningKit){
+                    var select = document.getElementById('epins');
+                    for(var i in data.EPinList){
 
                             var option = document.createElement('option');
                             var att = document.createAttribute('value');
-                            att.value = data.joiningKit[i].joiningKitId;
+                            att.value = data.EPinList[i].epinId;
                             option.setAttributeNode(att);
-                            var textNode = document.createTextNode(data.joiningKit[i].kitName);
+                            var textNode = document.createTextNode(data.EPinList[i].epin);
                             option.appendChild(textNode);
                             select.appendChild(option);                        
                         }
                     });
-          
-      })();  
+                
+                
+            })();
     </script>
      
 
