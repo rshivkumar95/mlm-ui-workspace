@@ -37,14 +37,14 @@
 
 <body class="animsition">
     <div class="page-wrapper">
-        <!-- HEADER MOBILE-->
-        <header class="header-mobile d-block d-lg-none">
+          <!-- HEADER MOBILE-->
+          <header class="header-mobile d-block d-lg-none">
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
-                           <!-- <img src="images/icon/logo.png" alt="CoolAdmin" /> -->
-                            MLM
+                                <img src="images/icon/logo.png" alt="AllyLabs" />
+
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -62,12 +62,12 @@
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>                           
                         </li>
 
-                        <li class="has-sub">
+                        <li class="has-sub" onclick="hideMenu()">
                             <a class="js-arrow" href="#">
                                 <i class="fa fa-user"></i>Members</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a href="all-members.html">All Members</a>
+                                    <a id="all-members" href="all-members.html">All Members</a>
                                 </li>
                                 <li>
                                     <a href="addmember.html">Add New Member</a>
@@ -95,12 +95,12 @@
                             </ul>
                         </li>
 
-                        <li class="has-sub">
+                        <li class="has-sub" onclick="hideMenu()">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-map-marker-alt"></i>EPIN</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a href="epin-generation.html">Genrate EPIN</a>
+                                    <a id="generateepin" href="epin-generation.html">Genrate EPIN</a>
                                 </li>
                                 <li>
                                     <a href="available-epin.html">Available EPIN</a>
@@ -162,8 +162,7 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                   <!--  <img src="images/icon/logo.png" alt="Cool Admin" /> -->
-                    <h1>MLM</h1>
+                    <img src="images/icon/logo.png" alt="AllyLabs" />
 
                 </a>
             </div>
@@ -175,12 +174,12 @@
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>                           
                         </li>
 
-                        <li class="has-sub">
+                        <li class="has-sub" onclick="hideMenu()">
                             <a class="js-arrow" href="#">
                                 <i class="fa fa-user"></i>Members</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a href="all-members.html">All Members</a>
+                                    <a id="all-members" href="all-members.html">All Members</a>
                                 </li>
                                 <li>
                                     <a href="addmember.html">Add New Member</a>
@@ -208,12 +207,13 @@
                             </ul>
                         </li>
 
-                        <li class="has-sub">
+                        <li class="has-sub" onclick="hideMenu()">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-map-marker-alt"></i>EPIN</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a href="epin-generation.html">Genrate EPIN</a>
+                                 
+                                    <a id="generateepin" href="epin-generation.html">Genrate EPIN</a>
                                 </li>
                                 <li>
                                     <a href="available-epin.html">Available EPIN</a>
@@ -270,14 +270,70 @@
         </aside>
         <!-- END MENU SIDEBAR-->
 
+
         <!-- PAGE CONTAINER-->
         <div class="page-container">
-            <!-- HEADER DESKTOP-->
+               <!-- HEADER DESKTOP-->
+
+               <header class="header-desktop">
+                    <div class="section__content section__content--p30">
+                        <div class="container-fluid">
+                            <div class="header-wrap">
+                                <div>
+                                </div>
+                                <div class="header-button">
+                                    <div class="noti-wrap">
+                                       
+                                    <div class="account-wrap">
+                                        <div class="account-item clearfix js-item-menu">
+    
+                                            <div class="image">
+                                                <img src="images/icon/avatar-01.png" alt="John Doe" />
+                                            </div>
+                                            <div class="content">
+                                                <a id="userName" class="js-acc-btn" href="#"><script>document.getElementById("userName").innerHTML=sessionStorage.getItem("userName");</script></a>
+                                            </div>
+                                            <div class="account-dropdown js-dropdown">
+                                                <div class="info clearfix">
+                                                    <div class="image">
+                                                        <a href="#">
+                                                            <img src="images/icon/avatar-01.png" alt="John Doe" />
+                                                        </a>
+                                                    </div>
+                                                    <div class="content">
+                                                        <h5 class="name">
+                                                            <a id="name" href="#"><script>document.getElementById("name").innerHTML=sessionStorage.getItem("userName");</script></a>
+                                                        </h5>
+                                                        <!-- <span class="email">johndoe@example.com</span> -->
+                                                    </div>
+                                                </div>
+                                                <div class="account-dropdown__body">
+                                                    <div class="account-dropdown__item">
+                                                        <a href="profile.html">
+                                                            <i class="zmdi zmdi-account"></i>Account</a>
+                                                    </div>
+                                                    <div class="account-dropdown__item">
+                                                        <a href="change-password.html">
+                                                            <i class="zmdi zmdi-settings"></i>Change Password</a>
+                                                    </div>
+                                                </div>
+                                                <div class="account-dropdown__footer">
+                                                    <a href="logout.html">
+                                                        <i class="zmdi zmdi-power"></i>Logout</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
             
             <!-- HEADER DESKTOP-->
 
             <!-- MAIN CONTENT-->
-            <div class="main-content">
+            <div class="main-content" style="margin-top:5%; ">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="row">
@@ -370,6 +426,8 @@
     <script src="js/controllers/connection.js"></script>
     <script src="js/controllers/main.js"></script>
     <script src="js/controllers/add-category.js"></script>
+    <script src="js/controllers/permissions.js"></script>
+
    
     <script>
             (function(){

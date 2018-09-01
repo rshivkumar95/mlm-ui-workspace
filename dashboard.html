@@ -44,14 +44,14 @@
 
 <body class="animsition">
     <div class="page-wrapper">
-        <!-- HEADER MOBILE-->
-        <header class="header-mobile d-block d-lg-none">
+          <!-- HEADER MOBILE-->
+          <header class="header-mobile d-block d-lg-none">
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
-                           <!-- <img src="images/icon/logo.png" alt="CoolAdmin" /> -->
-                            MLM
+                                <img src="images/icon/logo.png" alt="AllyLabs" />
+
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -69,12 +69,12 @@
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>                           
                         </li>
 
-                        <li class="has-sub">
+                        <li class="has-sub" onclick="hideMenu()">
                             <a class="js-arrow" href="#">
                                 <i class="fa fa-user"></i>Members</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a href="all-members.html">All Members</a>
+                                    <a id="all-members" href="all-members.html">All Members</a>
                                 </li>
                                 <li>
                                     <a href="addmember.html">Add New Member</a>
@@ -102,12 +102,12 @@
                             </ul>
                         </li>
 
-                        <li class="has-sub">
+                        <li class="has-sub" onclick="hideMenu()">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-map-marker-alt"></i>EPIN</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a href="epin-generation.html">Genrate EPIN</a>
+                                    <a id="generateepin" href="epin-generation.html">Genrate EPIN</a>
                                 </li>
                                 <li>
                                     <a href="available-epin.html">Available EPIN</a>
@@ -169,8 +169,7 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                   <!--  <img src="images/icon/logo.png" alt="Cool Admin" /> -->
-                    <h1>MLM</h1>
+                    <img src="images/icon/logo.png" alt="AllyLabs" />
 
                 </a>
             </div>
@@ -182,12 +181,12 @@
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>                           
                         </li>
 
-                        <li class="has-sub">
+                        <li class="has-sub" onclick="hideMenu()">
                             <a class="js-arrow" href="#">
                                 <i class="fa fa-user"></i>Members</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a href="all-members.html">All Members</a>
+                                    <a id="all-members" href="all-members.html">All Members</a>
                                 </li>
                                 <li>
                                     <a href="addmember.html">Add New Member</a>
@@ -215,12 +214,13 @@
                             </ul>
                         </li>
 
-                        <li class="has-sub">
+                        <li class="has-sub" onclick="hideMenu()">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-map-marker-alt"></i>EPIN</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a href="epin-generation.html">Genrate EPIN</a>
+                                 
+                                    <a id="generateepin" href="epin-generation.html">Genrate EPIN</a>
                                 </li>
                                 <li>
                                     <a href="available-epin.html">Available EPIN</a>
@@ -280,10 +280,63 @@
         <!-- PAGE CONTAINER-->
         <div class="page-container">
             <!-- HEADER DESKTOP-->
-           
+                       <header class="header-desktop">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="header-wrap">
+                            <div>
+                            </div>
+                            <div class="header-button">
+                                <div class="noti-wrap">
+                                   
+                                <div class="account-wrap">
+                                    <div class="account-item clearfix js-item-menu">
+
+                                        <div class="image">
+                                            <img src="images/icon/avatar-01.png" alt="John Doe" />
+                                        </div>
+                                        <div class="content">
+                                            <a id="userName" class="js-acc-btn" href="#"><script>document.getElementById("userName").innerHTML=sessionStorage.getItem("userName");</script></a>
+                                        </div>
+                                        <div class="account-dropdown js-dropdown">
+                                            <div class="info clearfix">
+                                                <div class="image">
+                                                    <a href="#">
+                                                        <img src="images/icon/avatar-01.png" alt="John Doe" />
+                                                    </a>
+                                                </div>
+                                                <div class="content">
+                                                    <h5 class="name">
+                                                        <a id="name" href="#"><script>document.getElementById("name").innerHTML=sessionStorage.getItem("userName");</script></a>
+                                                    </h5>
+                                                    <!-- <span class="email">johndoe@example.com</span> -->
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__body">
+                                                <div class="account-dropdown__item">
+                                                    <a href="profile.html">
+                                                        <i class="zmdi zmdi-account"></i>Account</a>
+                                                </div>
+                                                <div class="account-dropdown__item">
+                                                    <a href="change-password.html">
+                                                        <i class="zmdi zmdi-settings"></i>Change Password</a>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__footer">
+                                                <a href="logout.html">
+                                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
 
             <!-- MAIN CONTENT-->
-            <div class="main-content">
+            <div class="main-content" style="margin-top: 5%;">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="row">
@@ -303,7 +356,7 @@
                                             <div class="icon">
                                             </div>
                                             <div class="text">
-                                                <h2 id="todayjoining">10</h2>
+                                                <h2 id="todayjoining">0</h2>
                                                 <span>Today Joining</span>
                                             </div>
                                         </div>
@@ -318,7 +371,7 @@
                                             <div class="icon">
                                             </div>
                                             <div class="text">
-                                                <h2 id="availablebalance">750.0</h2>
+                                                <h2 id="availablebalance">0.0</h2>
                                                 <span>Available Balance</span>
                                             </div>
                                         </div>
@@ -333,7 +386,7 @@
                                             <div class="icon">
                                             </div>
                                             <div class="text">
-                                                <h2 id="totalearning">1,080.0</h2>
+                                                <h2 id="totalearning">0.0</h2>
                                                 <span>Total Earning</span>
                                             </div>
                                         </div>
@@ -347,7 +400,7 @@
                                         <div class="overview-box clearfix">
                                             
                                             <div class="text">
-                                                <h2 id="withdrawableamount">500.0</h2>
+                                                <h2 id="withdrawableamount">0.0</h2>
                                                 <span>Withdrawable Amount</span>
                                             </div>
                                         </div>
@@ -360,28 +413,28 @@
                             <div class="col-lg-6">
                                 <div class="au-card recent-report">
                                     <div class="au-card-inner">
-                                        <h3 class="title-2">recent reports</h3>
+                                        <h3 class="title-2">System User reports</h3>
                                         <div class="chart-info">
                                             <div class="chart-info__left">
                                                 <div class="chart-note">
                                                     <span class="dot dot--blue"></span>
-                                                    <span>products</span>
+                                                    <span>Active</span>
                                                 </div>
                                                 <div class="chart-note mr-0">
                                                     <span class="dot dot--green"></span>
-                                                    <span>services</span>
+                                                    <span>Inative</span>
                                                 </div>
                                             </div>
                                             <div class="chart-info__right">
                                                 <div class="chart-statis">
                                                     <span class="index incre">
                                                         <i class="zmdi zmdi-long-arrow-up"></i>25%</span>
-                                                    <span class="label">products</span>
+                                                    <span class="label">Active</span>
                                                 </div>
                                                 <div class="chart-statis mr-0">
                                                     <span class="index decre">
                                                         <i class="zmdi zmdi-long-arrow-down"></i>10%</span>
-                                                    <span class="label">services</span>
+                                                    <span class="label">Inactive</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -394,17 +447,17 @@
                             <div class="col-lg-6">
                                 <div class="au-card chart-percent-card">
                                     <div class="au-card-inner">
-                                        <h3 class="title-2 tm-b-5">char by %</h3>
+                                        <h3 class="title-2 tm-b-5">Available user </h3>
                                         <div class="row no-gutters">
                                             <div class="col-xl-6">
                                                 <div class="chart-note-wrap">
                                                     <div class="chart-note mr-0 d-block">
                                                         <span class="dot dot--blue"></span>
-                                                        <span>products</span>
+                                                        <span>Active </span>
                                                     </div>
                                                     <div class="chart-note mr-0 d-block">
                                                         <span class="dot dot--red"></span>
-                                                        <span>services</span>
+                                                        <span>Inactive</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -549,8 +602,8 @@
                             </div>
                         </div> -->
                         <div class="row">
-                            <div class="col-lg-6">
-                                <div class="au-card au-card--no-shadow au-card--no-pad m-b-40">
+                            <div  class="col-lg-6" >
+                                <div id="withdrawalrequest" class="au-card au-card--no-shadow au-card--no-pad m-b-40">
                                     <div class="au-card-title" style="background-image:url('images/bg-title-01.jpg');">
                                         <div class="bg-overlay bg-overlay--blue"></div>
                                         <h3>
@@ -560,62 +613,24 @@
                                         </button>
                                     </div>
                                     <div class="au-task js-list-load">
-                                        <div class="au-task__title">
+                                        <!-- <div class="au-task__title">
                                             <p>Tasks for John Doe</p>
-                                        </div>
+                                        </div> -->
                                         <div class="au-task-list js-scrollbar3">
-                                            <div class="au-task__item au-task__item--danger">
+                                           <!--  <div class="au-task__item au-task__item--danger">
                                                 <div class="au-task__item-inner">
                                                     <h5 class="task">
                                                         <a href="#">Meeting about plan for Admin Template 2018</a>
                                                     </h5>
                                                     <span class="time">10:00 AM</span>
                                                 </div>
-                                            </div>
-                                            <div class="au-task__item au-task__item--warning">
-                                                <div class="au-task__item-inner">
-                                                    <h5 class="task">
-                                                        <a href="#">Create new task for Dashboard</a>
-                                                    </h5>
-                                                    <span class="time">11:00 AM</span>
-                                                </div>
-                                            </div>
-                                            <div class="au-task__item au-task__item--primary">
-                                                <div class="au-task__item-inner">
-                                                    <h5 class="task">
-                                                        <a href="#">Meeting about plan for Admin Template 2018</a>
-                                                    </h5>
-                                                    <span class="time">02:00 PM</span>
-                                                </div>
-                                            </div>
-                                            <div class="au-task__item au-task__item--success">
-                                                <div class="au-task__item-inner">
-                                                    <h5 class="task">
-                                                        <a href="#">Create new task for Dashboard</a>
-                                                    </h5>
-                                                    <span class="time">03:30 PM</span>
-                                                </div>
-                                            </div>
-                                            <div class="au-task__item au-task__item--danger js-load-item">
-                                                <div class="au-task__item-inner">
-                                                    <h5 class="task">
-                                                        <a href="#">Meeting about plan for Admin Template 2018</a>
-                                                    </h5>
-                                                    <span class="time">10:00 AM</span>
-                                                </div>
-                                            </div>
-                                            <div class="au-task__item au-task__item--warning js-load-item">
-                                                <div class="au-task__item-inner">
-                                                    <h5 class="task">
-                                                        <a href="#">Create new task for Dashboard</a>
-                                                    </h5>
-                                                    <span class="time">11:00 AM</span>
-                                                </div>
-                                            </div>
+                                            </div> -->
+                                           
+                                            
                                         </div>
-                                        <div class="au-task__footer">
+                                       <!--  <div class="au-task__footer">
                                             <button class="au-btn au-btn-load js-load-btn">load more</button>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -633,8 +648,8 @@
                                                   <thead>
                                                     <tr style="font-size: 12px;">
                                                       <th>Req. Id</th>
-                                                      <th>From -> To</th>
-                                                      <th>Count</th>                                                      
+                                                      <th>From</th>
+                                                      <th>Requestd EPIN</th>                                                      
                                                       <th>Cost</th>
                                                       <th>Status</th>
                                                     </tr>
@@ -692,6 +707,8 @@
     <script src="js/controllers/connection.js"></script>
     <script src="js/controllers/main.js"></script>
     <script src="js/controllers/dashboard.js"></script>
+    <script src="js/controllers/permissions.js"></script>
+
     
     <script>
     
@@ -702,6 +719,30 @@
             
         })();
      
+    </script>
+
+
+<script>
+        var hideMenu = function(){
+
+            var userRole = sessionStorage.getItem('userRole');
+            console.log(userRole);
+            if(userRole=='Admin'){
+                document.getElementById('generateepin').style.display='block';
+                document.getElementById('all-members').style.display='block';
+                document.getElementById('withdrawalrequest').style.display='block';
+
+
+            }
+            else {
+                document.getElementById('generateepin').style.display='none';
+                document.getElementById('all-members').style.display='none';
+                document.getElementById('withdrawalrequest').style.display='none';
+
+
+            }
+        }
+
     </script>
     
     

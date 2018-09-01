@@ -15,7 +15,7 @@ var Dashboard = {
             var response = JSON.parse(http.responseText);
             console.log(response);
             if(response.HasErrors){
-                alert(response.Errors[0].Message);
+                // alert(response.Errors[0].Message);
             }
             else{
                 
@@ -42,7 +42,7 @@ var Dashboard = {
             var response = JSON.parse(http.responseText);
             console.log(response);
             if(response.HasErrors){
-                alert(response.Errors[0].Message);
+                // alert(response.Errors[0].Message);
             }
             else{
                 
@@ -63,7 +63,8 @@ var Dashboard = {
                     tr.appendChild(td1);
                     
                     var td2 = document.createElement('td');                    
-                    var textnode2 = document.createTextNode(response.epinRquests[i].requesterId+' - '+response.epinRquests[i].requestedToId);
+                    // var textnode2 = document.createTextNode(response.epinRquests[i].requesterId+' - '+response.epinRquests[i].requestedToId);
+                    var textnode2 = document.createTextNode(response.epinRquests[i].requesterId);
                     td2.appendChild(textnode2);
                     tr.appendChild(td2);
                     

@@ -447,7 +447,7 @@ var register = function(){
                 alert(error);    
             }
             else{
-                alert('Member Added');
+                alert('New Member Added');
                 window.location.href='dashboard.html';
             }
             
@@ -557,7 +557,7 @@ var fetchMember = function(type){
         apiversion : Connection.getApiVersion(),
         passKey : Connection.getPassKey(),
         userId : sessionStorage.getItem('userId'),
-	    userRole:"Admin",
+	    userRole:sessionStorage.getItem('userRole')
     }
 
     console.log(typeof filterBy);
@@ -629,7 +629,7 @@ var fetchMember = function(type){
                 if(response.userList[i].confirmationDate==null)
                     var confirmationDate='';
                 else
-                    var confirmationDate = d.getDate()+'/'+d.getMonth()+'/'+d.getFullYear();
+                    var confirmationDate = d.getDate()+'/'+(d.getMonth()+1)+'/'+d.getFullYear();
                 var textnode2 = document.createTextNode(confirmationDate);
                 td2.appendChild(textnode2);
                 tr.appendChild(td2);
@@ -639,7 +639,7 @@ var fetchMember = function(type){
                 if(response.userList[i].dateOfBirth==null)
                     var dateOfBirth='';
                 else
-                    var dateOfBirth = d.getDate()+'/'+d.getMonth()+'/'+d.getFullYear();
+                    var dateOfBirth = d.getDate()+'/'+(d.getMonth()+1)+'/'+d.getFullYear();
                 var textnode3 = document.createTextNode(dateOfBirth);
                 td3.appendChild(textnode3);
                 tr.appendChild(td3);
@@ -654,7 +654,7 @@ var fetchMember = function(type){
                 if(response.userList[i].joiningDate==null)
                     var joiningDate='';
                 else
-                    var joiningDate = d.getDate()+'/'+d.getMonth()+'/'+d.getFullYear();
+                    var joiningDate = d.getDate()+'/'+(d.getMonth()+1)+'/'+d.getFullYear();
                 var textnode5 = document.createTextNode(joiningDate);
                 td5.appendChild(textnode5);
                 tr.appendChild(td5);

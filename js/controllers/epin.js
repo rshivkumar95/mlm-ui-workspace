@@ -18,8 +18,8 @@ var Epin = {
             apiversion : Connection.getApiVersion(),
             passKey : Connection.getPassKey(),
             numbeOfPinsRequested:count,
-	        requestedBy:sessionStorage.getItem('userId'),
-	        kitId:kitid
+            requestedBy:sessionStorage.getItem('userId'),
+            kitId:kitid
             
         }
         const http = new XMLHttpRequest()
@@ -40,13 +40,16 @@ var Epin = {
         }
     },
     fetch : function(){
+        var status = document.getElementById('epin-by-status').value;
+
         const params = {
             apiversion : Connection.getApiVersion(),
             passKey : Connection.getPassKey(),
-            userRole:"Admin",
-	        pinStatus:"UNUSED",
-	        perPagePins:"10",
-	        pageNo:"1"
+            userRole:sessionStorage.getItem('userRole'),
+            pinStatus:status,
+            // perPagePins:"10",
+            // pageNo:"1",
+            userId:sessionStorage.getItem('userId')
             
         }
         console.log('Params');
@@ -66,7 +69,7 @@ var Epin = {
                     if(i<response.Errors.length-1)
                         error=error+' ,';
                 }
-                alert(error);    
+                // alert(error);    
             }
             else{
                console.log(response.users);
@@ -86,7 +89,7 @@ var Epin = {
                     if(response.EPinList[i].createdDate==null)
                         var createdDate='';
                     else
-                        var createdDate = d.getDate()+'/'+d.getMonth()+'/'+d.getFullYear();
+                        var createdDate = d.getDate()+'/'+(d.getMonth()+1)+'/'+d.getFullYear();
                     var textnode2 = document.createTextNode(createdDate);
                     td2.appendChild(textnode2);
                     tr.appendChild(td2);
@@ -97,9 +100,11 @@ var Epin = {
                     tr.appendChild(td3);
                     
                     var td4 = document.createElement('td');
-                    var textnode4 = document.createTextNode(response.EPinList[i].directSellerId==null?'':response.EPinList[i].directSellerId);
+                    var textnode4 = document.createTextNode(response.EPinList[i].usedBy==null?'':response.EPinList[i].usedBy);
                     td4.appendChild(textnode4);
                     tr.appendChild(td4);
+
+                    
                     
                     var td5 = document.createElement('td');                    
                     var textnode5 = document.createTextNode(response.EPinList[i].status);
@@ -146,8 +151,8 @@ var Epin = {
         const params = {
             apiversion : Connection.getApiVersion(),
             passKey : Connection.getPassKey(),
-	        userId:sessionStorage.getItem('userId'),
-	        requestedTo:requestto,
+            userId:sessionStorage.getItem('userId'),
+            requestedTo:requestto,
             numberOfPins:count,
             cost:cost
             
@@ -178,10 +183,11 @@ var Epin = {
             const params = {
                 apiversion : Connection.getApiVersion(),
                 passKey : Connection.getPassKey(),
-                userRole:"Admin",
+                userRole:sessionStorage.getItem('userRole'),
                 pinStatus:"UNUSED",
-                perPagePins:"10",
-                pageNo:"1"
+                // perPagePins:"10",
+                // pageNo:"1",
+                userId:sessionStorage.getItem('userId')
                 
             }
             console.log('Params');
@@ -201,7 +207,7 @@ var Epin = {
                         if(i<response.Errors.length-1)
                             error=error+' ,';
                     }
-                    alert(error);    
+                    // alert(error);    
                 }
                 else{
                    resolve(response);
@@ -232,9 +238,9 @@ var Epin = {
             apiversion : Connection.getApiVersion(),
             passKey : Connection.getPassKey(),
             userId:sessionStorage.getItem('userId'),
-	        transferTo:"Level User",
+            transferTo:"Level User",
             levelUserId:transferto,
-	        epins : selectedEpins
+            epins : selectedEpins
             
         }
         console.log('Params');

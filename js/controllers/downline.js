@@ -51,7 +51,7 @@ var fetchLevelDownline = function(){
                 if(response.users[i].confirmationDate==null)
                     var confirmationDate='';
                 else
-                    var confirmationDate = d.getDate()+'/'+d.getMonth()+'/'+d.getFullYear();
+                    var confirmationDate = d.getDate()+'/'+(d.getMonth()+1)+'/'+d.getFullYear();
                 var textnode2 = document.createTextNode(confirmationDate);
                 td2.appendChild(textnode2);
                 tr.appendChild(td2);
@@ -61,7 +61,7 @@ var fetchLevelDownline = function(){
                 if(response.users[i].dateOfBirth==null)
                     var dateOfBirth='';
                 else
-                    var dateOfBirth = d.getDate()+'/'+d.getMonth()+'/'+d.getFullYear();
+                    var dateOfBirth = d.getDate()+'/'+(d.getMonth()+1)+'/'+d.getFullYear();
                 var textnode3 = document.createTextNode(dateOfBirth);
                 td3.appendChild(textnode3);
                 tr.appendChild(td3);
@@ -76,7 +76,7 @@ var fetchLevelDownline = function(){
                 if(response.users[i].joiningDate==null)
                     var joiningDate='';
                 else
-                    var joiningDate = d.getDate()+'/'+d.getMonth()+'/'+d.getFullYear();
+                    var joiningDate = d.getDate()+'/'+(d.getMonth()+1)+'/'+d.getFullYear();
                 var textnode5 = document.createTextNode(joiningDate);
                 td5.appendChild(textnode5);
                 tr.appendChild(td5);
@@ -159,7 +159,7 @@ var fetchDirectDownline = function(){
                 if(response.users[i].confirmationDate==null)
                     var confirmationDate='';
                 else
-                    var confirmationDate = d.getDate()+'/'+d.getMonth()+'/'+d.getFullYear();
+                    var confirmationDate = d.getDate()+'/'+(d.getMonth()+1)+'/'+d.getFullYear();
                 var textnode2 = document.createTextNode(confirmationDate);
                 td2.appendChild(textnode2);
                 tr.appendChild(td2);
