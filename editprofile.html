@@ -339,7 +339,7 @@
                             <div class="col-md-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h2 class="title-1">Add Member</h2>
+                                        <h2 class="title-1">Edit Profile</h2>
                                     </div>
                                     
                                     <div class="card-body">
@@ -347,10 +347,10 @@
 											<li class="nav-item"  onclick="showprofile()">
 												<span class="nav-link active show" id="profile-tab"><i class="fa fa-user"></i> Profile</span>
 											</li>
-											<li class="nav-item" onclick="validateprofile()">
+											<li class="nav-item" onclick="validateprofileupdate()">
 												<span class="nav-link" id="nominee-tab"><i class="fa fa-users"></i> Nominee</span>
 											</li>
-											<li class="nav-item" onclick="validatenominee()">
+											<li class="nav-item" onclick="validatenomineeupdate()">
 												<span class="nav-link" id="bank-tab"><i class="fa fa-inr"></i> Bank</span>
 											</li>
 								        </ul>
@@ -438,15 +438,6 @@
                                                             <input type="email" id="profile-email" name="text-input" placeholder="Email" class="form-control">
                                                             <small class="form-text text-muted" id="profile-email-error"></small>
                                                         </div>
-                                                </div>                                                
-                                                <div class="row form-group">
-                                                        <div class="col col-md-3">
-                                                            <label for="profile-address" class=" form-control-label">Address</label>
-                                                        </div>
-                                                        <div class="col-12 col-md-9">                                                            
-                                                            <textarea name="textarea-input" id="profile-address" rows="4" placeholder="Aaddress" class="form-control"></textarea>
-                                                            <small class="form-text text-muted" id="profile-address-error"></small>
-                                                        </div>
                                                 </div>
                                                 <div class="row form-group">
                                                     <div class="col col-md-3">
@@ -465,6 +456,15 @@
                                                         <input type="text" id="profile-occupation" name="text-input" placeholder="occupation" class="form-control">
                                                         <small class="form-text text-muted" id="profile-occupation-error"></small>
                                                     </div>
+                                                </div>                                                  
+                                                <div class="row form-group">
+                                                        <div class="col col-md-3">
+                                                            <label for="profile-address" class=" form-control-label">Address</label>
+                                                        </div>
+                                                        <div class="col-12 col-md-9">                                                            
+                                                            <textarea name="textarea-input" id="profile-address" rows="4" placeholder="Aaddress" class="form-control"></textarea>
+                                                            <small class="form-text text-muted" id="profile-address-error"></small>
+                                                        </div>
                                                 </div>                                                
                                                 <div class="row form-group">
                                                         <div class="col col-md-3">
@@ -545,72 +545,14 @@
                                                             <label for="profile-adhar" class=" form-control-label">Adhar Number</label>
                                                         </div>
                                                         <div class="col-12 col-md-9">
-                                                            <input type="number" id="profile-adhar" name="text-input" placeholder="Adhar Number" class="form-control">
+                                                            <input type="text" id="profile-adhar" name="text-input" placeholder="Adhar Number" class="form-control">
                                                             <small class="form-text text-muted" id="profile-adhar-error"></small>
                                                         </div>
                                                 </div>
-                                                <hr/>
-                                                <div class="row form-group">
-                                                        <div class="col col-md-3">
-                                                            <label for="profile-username" class=" form-control-label">Username</label>
-                                                        </div>
-                                                        <div class="col-12 col-md-9">
-                                                            <input type="text" id="profile-username" name="text-input" placeholder="Username" class="form-control">
-                                                            <small class="form-text text-muted" id="profile-username-error"></small>
-                                                        </div>
-                                                </div>
-                                                <div class="row form-group">
-                                                        <div class="col col-md-3">
-                                                            <label for="profile-password" class=" form-control-label">Password</label>
-                                                        </div>
-                                                        <div class="col-12 col-md-9">
-                                                            <input type="password" id="profile-password" name="text-input" placeholder="Password" class="form-control">
-                                                            <small class="form-text text-muted" id="profile-password-error"></small>
-                                                        </div>
-                                                </div>
-                                                <div class="row form-group">
-                                                        <div class="col col-md-3">
-                                                            <label for="profile-confirmpassword" class=" form-control-label">Confirm Password</label>
-                                                        </div>
-                                                        <div class="col-12 col-md-9">
-                                                            <input type="password" id="profile-confirmpassword" name="text-input" placeholder="Password" class="form-control">
-                                                            <small class="form-text text-muted" id="profile-confirmpassword-error"></small>
-                                                        </div>
-                                                </div>
-                                                <hr/>
-                                                <div class="row form-group">
-                                                        <div class="col col-md-3">
-                                                            <label for="profile-epin" class=" form-control-label">Epin</label>
-                                                        </div>
-                                                        <div class="col-12 col-md-9">
-                                                            <input type="text" id="profile-epin" name="text-input" placeholder="Epin" class="form-control">
-                                                            <small class="form-text text-muted" id="profile-epin-error"></small>
-                                                        </div>
-                                                </div>
-                                                <div class="row form-group">
-                                                        <div class="col col-md-3">
-                                                            <label for="profile-kitid" class=" form-control-label">Kit Id</label>
-                                                        </div>
-                                                        <div class="col-12 col-md-9">
-                                                            
-                                                            <select name="select" id="profile-kitid" class="form-control">
-                                                           <option value="">Please select</option>
-                                                                                                                 
-                                                        </select>
-                                                            <small class="form-text text-muted" id="profile-kitid-error"></small>
-                                                        </div>
-                                                </div>
-                                                <div class="row form-group">
-                                                        <div class="col col-md-3">
-                                                            <label for="profile-parentid" class=" form-control-label">Parent Id</label>
-                                                        </div>
-                                                        <div class="col-12 col-md-9">
-                                                            <input type="text" id="profile-parentid" name="text-input" placeholder="Parent Id" class="form-control">
-                                                            <small class="form-text text-muted" id="profile-parentid-error"></small>
-                                                        </div>
-                                                </div>
                                                 
-                                                <button type="submit" class="btn btn-primary btn-sm" onclick="validateprofile();">
+                                                
+                                                
+                                                <button type="submit" class="btn btn-primary btn-sm" onclick="validateprofileupdate();">
                                                     <i class="fa fa-dot-circle-o"></i> Next
                                                 </button>
                                        
@@ -712,7 +654,7 @@
                                                 </div>
                                                 
                                                 
-                                                <button type="submit" class="btn btn-primary btn-sm" onclick="validatenominee();">
+                                                <button type="submit" class="btn btn-primary btn-sm" onclick="validatenomineeupdate();">
                                                     <i class="fa fa-dot-circle-o"></i> Next
                                                 </button>
 											</div>
@@ -775,8 +717,8 @@
                                                             <small class="form-text text-muted" id="bank-acctype-error"></small>
                                                         </div>
                                                 </div>
-                                                 <button type="submit" class="btn btn-primary btn-sm" onclick="register();">
-                                                    <i class="fa fa-dot-circle-o"></i> ADD
+                                                 <button type="submit" class="btn btn-primary btn-sm" onclick="update();">
+                                                    <i class="fa fa-dot-circle-o"></i> update
                                                 </button>
 											</div>
 				                       </div>
@@ -831,23 +773,7 @@
 
     <script>
       (function(){
-          
-          Joining.fetch().then(function(data){
-                    
-                    console.log(data);
-                    var select = document.getElementById('profile-kitid');
-                    for(var i in data.joiningKit){
-
-                            var option = document.createElement('option');
-                            var att = document.createAttribute('value');
-                            att.value = data.joiningKit[i].joiningKitId;
-                        option.setAttributeNode(att);
-                            var textNode = document.createTextNode(data.joiningKit[i].kitName);
-                            option.appendChild(textNode);
-                            select.appendChild(option);                        
-                        }
-                    });
-          
+          fetchProfile();
       })();  
     </script>
 

@@ -32,7 +32,11 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css"/>
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
-
+    <style>
+        .details{
+            border-bottom:0.2px solid rgb(206, 205, 205);padding: 10px;
+            }
+    </style>
 </head>
 
 <body class="animsition">
@@ -336,9 +340,22 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-12">
+                                    <div class="card">
+                                            <div class="card-header">
+                                                <h2 class="title-1">Profile<span id="edit" style="float:right;font-size: 15px;"></span></h2>
+                                                
+                                            </div>
+                                        </div>
+                                        
+                            </div>
+                        </div>
+                        <div class="row">
+                            
+                            <!-- User Details -->
+                            <div class="col-md-6">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h2 class="title-1">Profile Details</h2>
+                                        <h2 class="title-2">User Details</h2>
                                     </div>
                                     
                                     <div class="card-body">
@@ -346,57 +363,331 @@
                                         <div class="row">
                                         
                                             <div class="col-sm-12">
-                                                <h2 class="title-2">Profile</h2>
-                                                <table class="table table-bordered" style="width:100%">
-                                                    <tr>
-                                                        <td>User Id</td>
-                                                        <td></td>
-                                                        <td>Mobile</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Aadhar No</td>
-                                                        <td id="aadharNumber"></td>
-                                                        <td>Name</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Confirmation Date</td>
-                                                        <td ></td>
-                                                        <td>Parent Id</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Date of Birth</td>
-                                                        <td></td>
-                                                        <td>Role Id</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Direct Seller Id</td>
-                                                        <td></td>
-                                                        <td>Sponser Id</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Joining Date</td>
-                                                        <td></td>
-                                                        <td>Status</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>User name</td>
-                                                        <td></td>
+                                                    <div class="row details" >                                                         
+                                                            <div class="col-sm-4">                                                             
+                                                                <b>Name</b>                                                         
+                                                            </div>                                                         
+                                                            <div class="col-sm-8">                                                             
+                                                                <span id="profile-name"></span>                                                         
+                                                            </div>                                                     
+                                                        </div>
+                                                        <div class="row details">                                                         
+                                                                <div class="col-sm-4">                                                             
+                                                                    <b>User Id</b>                                                         
+                                                                </div>                                                         
+                                                                <div class="col-sm-8">                                                             
+                                                                    <span id="profile-userId"></span>                                                         
+                                                                </div>                                                     
+                                                            </div>
+                                                            <div class="row details">                                                         
+                                                                <div class="col-sm-4">                                                             
+                                                                    <b>User Name</b>                                                         
+                                                                </div>                                                         
+                                                                <div class="col-sm-8">                                                             
+                                                                    <span id="profile-userName"></span>                                                         
+                                                                </div>                                                     
+                                                            </div>
+                                                            <div class="row details">                                                         
+                                                                    <div class="col-sm-4">                                                             
+                                                                        <b>DOB</b>                                                         
+                                                                    </div>                                                         
+                                                                    <div class="col-sm-8">                                                             
+                                                                        <span id="profile-dateOfBirth"></span>                                                         
+                                                                    </div>                                                     
+                                                                </div>
+                                                        <div class="row details">
+                                                            <div class="col-sm-4">                                                            
+                                                                 <b>Aadhar No.</b>                                                         
+                                                            </div>                                                         
+                                                            <div class="col-sm-8">                                                             
+                                                                <span id="profile-aadharNumber"></span>                                                         
+                                                            </div>                                                     
+                                                        </div>
+                                                        <div class="row details">                                                         
+                                                            <div class="col-sm-4">                                                             
+                                                                <b>Confirmation Date</b>                                                         
+                                                            </div>                                                         
+                                                            <div class="col-sm-8">                                                             
+                                                                <span id="profile-confirmationDate"></span>                                                         
+                                                            </div>                                                     
+                                                        </div>
+                                                        <div class="row details">                                                         
+                                                            <div class="col-sm-4">                                                             
+                                                                <b>Direct Seller Id</b>                                                         
+                                                            </div>                                                         
+                                                            <div class="col-sm-8">                                                             
+                                                                <span id="profile-directSellerId"></span>                                                         
+                                                            </div>                                                     
+                                                        </div>
+                                                        <div class="row details">                                                         
+                                                            <div class="col-sm-4">                                                             
+                                                                <b>Joining Date</b>                                                         
+                                                            </div>                                                         
+                                                            <div class="col-sm-8">                                                             
+                                                                <span id="profile-joiningDate"></span>                                                         
+                                                            </div>                                                     
+                                                        </div>
+                                                        <div class="row details">                                                         
+                                                            <div class="col-sm-4">                                                             
+                                                                <b>Mobile</b>                                                         
+                                                            </div>                                                         
+                                                            <div class="col-sm-8">                                                             
+                                                                <span id="profile-mobile"></span>                                                         
+                                                            </div>                                                     
+                                                        </div>
                                                        
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                            
+                                                        <div class="row details">                                                         
+                                                            <div class="col-sm-4">                                                             
+                                                                <b>Parent Id</b>                                                         
+                                                            </div>                                                         
+                                                            <div class="col-sm-8">                                                             
+                                                                <span id="profile-parentId"></span>                                                         
+                                                            </div>                                                     
+                                                        </div>
+                                                        <div class="row details">                                                         
+                                                            <div class="col-sm-4">                                                             
+                                                                <b>Role Id</b>                                                         
+                                                            </div>                                                         
+                                                            <div class="col-sm-8">                                                             
+                                                                <span id="profile-roleId"></span>                                                         
+                                                            </div>                                                     
+                                                        </div>
+                                                        <div class="row details">                                                         
+                                                            <div class="col-sm-4">                                                             
+                                                                <b>Sponser Id</b>                                                         
+                                                            </div>                                                         
+                                                            <div class="col-sm-8">                                                             
+                                                                <span id="profile-sponserId"></span>                                                         
+                                                            </div>                                                     
+                                                        </div>
+                                                        <div class="row details">                                                         
+                                                            <div class="col-sm-4">                                                             
+                                                                <b>Occupation</b>                                                         
+                                                            </div>                                                         
+                                                            <div class="col-sm-8">                                                             
+                                                                <span id="profile-occupation"></span>                                                         
+                                                            </div>                                                     
+                                                        </div>
+                                                        <div class="row details">                                                         
+                                                            <div class="col-sm-4">                                                             
+                                                                <b>Qualification</b>                                                         
+                                                            </div>                                                         
+                                                            <div class="col-sm-8">                                                             
+                                                                <span id="profile-qualification"></span>                                                         
+                                                            </div>                                                     
+                                                        </div>
+                                                       <!-- <div class="row">                                                         
+                                                            <div class="col-sm-4">                                                             
+                                                                <b>Status Id</b>                                                         
+                                                            </div>                                                         
+                                                            <div class="col-sm-8">                                                             
+                                                                <span id="profile-statusId"></span>                                                         
+                                                            </div>                                                     
+                                                        </div> -->
+                                                        
+                                                        <div class="row details">                                                         
+                                                            <div class="col-sm-4">                                                             
+                                                                <b>Address</b>                                                         
+                                                            </div>                                                         
+                                                            <div class="col-sm-8">                                                             
+                                                                <span id="userAddress-address"></span>                                                         
+                                                            </div>                                                     
+                                                        </div>
+                                                        <div class="row details">                                                         
+                                                            <div class="col-sm-4">                                                             
+                                                                <b>Address Id</b>                                                         
+                                                            </div>                                                         
+                                                            <div class="col-sm-8">                                                             
+                                                                <span id="userAddress-addressId"></span>                                                         
+                                                            </div>                                                     
+                                                        </div>
+                                                        <div class="row details">                                                         
+                                                            <div class="col-sm-4">                                                             
+                                                                <b>City</b>                                                         
+                                                            </div>                                                         
+                                                            <div class="col-sm-8">                                                             
+                                                                <span id="userAddress-city"></span>                                                         
+                                                            </div>                                                     
+                                                        </div>
+                                                        <div class="row details">                                                         
+                                                            <div class="col-sm-4">                                                             
+                                                                <b>Country</b>                                                         
+                                                            </div>                                                         
+                                                            <div class="col-sm-8">                                                             
+                                                                <span id="userAddress-country"></span>                                                         
+                                                            </div>                                                     
+                                                        </div>
+                                                        <div class="row details">                                                         
+                                                            <div class="col-sm-4">                                                             
+                                                                <b>Pincode</b>                                                         
+                                                            </div>                                                         
+                                                            <div class="col-sm-8">                                                             
+                                                                <span id="userAddress-pincode"></span>                                                         
+                                                            </div>                                                     
+                                                        </div>
+                                                        <div class="row details">                                                         
+                                                            <div class="col-sm-4">                                                             
+                                                                <b>State</b>                                                         
+                                                            </div>                                                         
+                                                            <div class="col-sm-8">                                                             
+                                                                <span id="userAddress-state"></span>                                                         
+                                                            </div>                                                     
+                                                        </div>       
+                                            </div>   
                                         </div>
-                                      
                                     </div>                                    
                                 </div>
                             </div>
+                            <!-- Account Details & Nominee Details -->
+                            <div class="col-md-6">
+                                <!-- Nominee Details -->
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h2 class="title-2">Nominee Details</h2>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                            
+                                            <div class="row">
+                                            
+                                                <div class="col-sm-12">
+                                                            <div class="row details"> 
+                                                                <div class="col-sm-4">         
+                                                                    <b>Nominee Name</b> 
+                                                                </div> 
+                                                                <div class="col-sm-8">         
+                                                                    <span id="nominee-nomineeName"></span> 
+                                                                </div>  
+                                                            </div>
+                                                            <div class="row details"> 
+                                                                <div class="col-sm-4">         
+                                                                    <b>Nominee Relation</b> 
+                                                                </div> 
+                                                                <div class="col-sm-8">         
+                                                                    <span id="nominee-relation"></span> 
+                                                                </div>  
+                                                            </div>
+                                                            <div class="row details"> 
+                                                                <div class="col-sm-4">         
+                                                                    <b>Address</b> 
+                                                                </div> 
+                                                                <div class="col-sm-8">         
+                                                                    <span id="nomineeAddress-address"></span> 
+                                                                </div>  
+                                                            </div>
+                                                            <div class="row details"> 
+                                                                <div class="col-sm-4">         
+                                                                    <b>City</b> 
+                                                                </div> 
+                                                                <div class="col-sm-8">         
+                                                                    <span id="nomineeAddress-city"></span> 
+                                                                </div>  
+                                                            </div>
+                                                            <div class="row details"> 
+                                                                    <div class="col-sm-4">         
+                                                                        <b>State</b> 
+                                                                    </div> 
+                                                                    <div class="col-sm-8">         
+                                                                        <span id="nomineeAddress-state"></span> 
+                                                                    </div>  
+                                                            </div>
+                                                            <div class="row details"> 
+                                                                <div class="col-sm-4">         
+                                                                    <b>Country</b> 
+                                                                </div> 
+                                                                <div class="col-sm-8">         
+                                                                    <span id="nomineeAddress-country"></span> 
+                                                                </div>  
+                                                            </div>
+                                                            <div class="row details"> 
+                                                                <div class="col-sm-4">         
+                                                                    <b>Pincode</b> 
+                                                                </div> 
+                                                                <div class="col-sm-8">         
+                                                                    <span id="nomineeAddress-pincode"></span> 
+                                                                </div>  
+                                                            </div>
+                                                            
+                                                </div>   
+                                            </div>
+                                        </div>                                    
+                                    </div>
+
+                                    <!-- Account Details -->
+                                    <div class="card">
+                                            <div class="card-header">
+                                                <h2 class="title-2">Bank Details</h2>
+                                            </div>
+                                            
+                                            <div class="card-body">
+                                                
+                                                <div class="row">
+                                                
+                                                    <div class="col-sm-12">
+                                                            
+                                                                <div class="row details"> 
+                                                                    <div class="col-sm-4">
+                                                                        <b>Account Number</b> 
+                                                                    </div> 
+                                                                    <div class="col-sm-8"> 
+                                                                        <span id="accountDetail-accountNumber"></span>
+                                                                    </div> 
+                                                                </div>
+                                                                <div class="row details"> 
+                                                                    <div class="col-sm-4">
+                                                                        <b>Title</b> 
+                                                                    </div> 
+                                                                    <div class="col-sm-8"> 
+                                                                         <span id="accountDetail-accountTitle"></span>
+                                                                    </div> 
+                                                                </div>
+                                                                <div class="row details"> 
+                                                                    <div class="col-sm-4">
+                                                                        <b>Type</b> 
+                                                                    </div> 
+                                                                    <div class="col-sm-8"> 
+                                                                        <span id="accountDetail-accountType"></span>
+                                                                    </div> 
+                                                                </div>
+                                                                <div class="row details"> 
+                                                                    <div class="col-sm-4">
+                                                                        <b>Bank Name</b> 
+                                                                    </div> 
+                                                                    <div class="col-sm-8"> 
+                                                                        <span id="accountDetail-bankName"></span>
+                                                                    </div> 
+                                                                </div>
+                                                                <div class="row details"> 
+                                                                    <div class="col-sm-4">
+                                                                        <b>Branch</b> 
+                                                                    </div> 
+                                                                    <div class="col-sm-8"> 
+                                                                        <span id="accountDetail-branchName"></span>
+                                                                    </div> 
+                                                                </div>
+                                                                <div class="row details"> 
+                                                                    <div class="col-sm-4">
+                                                                        <b>IFSC Code</b> 
+                                                                    </div> 
+                                                                    <div class="col-sm-8"> 
+                                                                        <span id="accountDetail-ifscCode"></span>
+                                                                    </div> 
+                                                                </div>
+                                                                <div class="row details"> 
+                                                                    <div class="col-sm-4">
+                                                                        <b>PAN</b> 
+                                                                    </div> 
+                                                                    <div class="col-sm-8"> 
+                                                                        <span id="accountDetail-panNumber"></span>
+                                                                    </div> 
+                                                                </div>
+                                                                
+                                                                
+                                                    </div>   
+                                                </div>
+                                            </div>                                    
+                                        </div>
+                                </div>
                         </div>                                               
                         <div class="row">
                             <div class="col-md-12">
@@ -440,35 +731,14 @@
     <script src="js/main.js"></script>
     <script src="js/controllers/connection.js"></script>
     <script src="js/controllers/main.js"></script>
+    <script src="js/controllers/member.js"></script>
     <script src="js/controllers/permissions.js"></script>
 
    
     
     <script>
-       (function(){
-           
-           const params = {
-            apiversion : Connection.getApiVersion(),
-            passKey : Connection.getPassKey(), 
-            userId:35,//sessionStorage.getItem('userId'),
-	        action:"VIEW"
-        }
-        const http = new XMLHttpRequest()
-        http.open('POST', Connection.getRequestUrl('fetch/userdetails'))
-        http.setRequestHeader('Content-type', 'application/json')
-        http.send(JSON.stringify(params)) 
-        http.onload = function () {           
-            var response = JSON.parse(http.responseText);
-            console.log(response);
-            if(response.HasErrors){
-                alert(response.Errors[0].Message);
-            }
-            else{
-                console.log(response);
-                
-            }
-        }
-           
+       (function(){    
+        viewProfile();
        })();
     </script>
    

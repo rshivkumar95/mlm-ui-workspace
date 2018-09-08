@@ -42,8 +42,13 @@ var fetchLevelDownline = function(){
                 var tr = document.createElement('tr');
                 
                 var td1 = document.createElement('td');
+                var link = document.createElement('a');
+                var hr = document.createAttribute('href');
+                link.setAttributeNode(hr);
+                hr.value = "profile.html#"+response.users[i].userId;
                 var textnode1 = document.createTextNode(response.users[i].userId);
-                td1.appendChild(textnode1);
+                link.appendChild(textnode1);
+                td1.appendChild(link);
                 tr.appendChild(td1);
                 
                 var td2 = document.createElement('td');
@@ -92,8 +97,15 @@ var fetchLevelDownline = function(){
                 tr.appendChild(td7);
                 
                 var td8 = document.createElement('td');
+                if(response.users[i].parentId!=null){
+                    var link = document.createElement('a');
+                var hr = document.createAttribute('href');
+                link.setAttributeNode(hr);
+                hr.value = "profile.html#"+response.users[i].parentId;
                 var textnode8 = document.createTextNode(response.users[i].parentId);
-                td8.appendChild(textnode8);
+                link.appendChild(textnode8);
+                td8.appendChild(link);
+                }
                 tr.appendChild(td8);
                 
                 var td9 = document.createElement('td');
@@ -150,8 +162,13 @@ var fetchDirectDownline = function(){
                 var tr = document.createElement('tr');
                 
                 var td1 = document.createElement('td');
+                var link = document.createElement('a');
+                var hr = document.createAttribute('href');
+                link.setAttributeNode(hr);
+                hr.value = "profile.html#"+response.users[i].userId;
                 var textnode1 = document.createTextNode(response.users[i].userId);
-                td1.appendChild(textnode1);
+                link.appendChild(textnode1);
+                td1.appendChild(link);
                 tr.appendChild(td1);
                 
                 var td2 = document.createElement('td');
@@ -200,8 +217,15 @@ var fetchDirectDownline = function(){
                 tr.appendChild(td7);
                 
                 var td8 = document.createElement('td');
+                if(response.users[i].parentId!=null){
+                    var link = document.createElement('a');
+                var hr = document.createAttribute('href');
+                link.setAttributeNode(hr);
+                hr.value = "profile.html#"+response.users[i].parentId;
                 var textnode8 = document.createTextNode(response.users[i].parentId);
-                td8.appendChild(textnode8);
+                link.appendChild(textnode8);
+                td8.appendChild(link);
+                }
                 tr.appendChild(td8);
                 
                 var td9 = document.createElement('td');
