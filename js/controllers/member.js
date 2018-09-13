@@ -897,11 +897,20 @@ var fetchMember = function(type){
                 var textnode9 = document.createTextNode(status);
                 td9.appendChild(textnode9);
                 tr.appendChild(td9);
+
+                var td10 = document.createElement('td');
+                var text = '<a href="profile.html#'+response.userList[i].userId+'" class="btn btn-primary btn-sm" style="width:100%;margin:2px;">view</a>';
+                if(response.userList[i].statusId==2)
+                    text += '<a href="activate.html#'+response.userList[i].userId+'" class="btn btn-success btn-sm" style="margin:2px;width:100%;">activate</a>';
+                td10.innerHTML = text;
+                tr.appendChild(td10);
                 
                 tbody.appendChild(tr);
             }
             
             document.getElementById('members').appendChild(tbody);
+
+            $("#members").tableExport({formats: ["xls"], position: 'top'    });
         }
     }
 

@@ -30,8 +30,17 @@
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="node_modules/tableexport/dist/css/tableexport.min.css"/>
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
+    <style>
+            .xls{
+                background: green;
+                padding: 10px;
+                border-radius: 3px;
+                color: white;
+            }
+        </style>
 
 </head>
 
@@ -62,12 +71,12 @@
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>                           
                         </li>
 
-                        <li class="has-sub" onclick="hideMenu()">
+                        <li class="has-sub" >
                             <a class="js-arrow" href="#">
                                 <i class="fa fa-user"></i>Members</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a id="all-members" href="all-members.html">All Members</a>
+                                    <a id="all-members-mobile" href="all-members.html">All Members</a>
                                 </li>
                                 <li>
                                     <a href="addmember.html">Add New Member</a>
@@ -95,12 +104,12 @@
                             </ul>
                         </li>
 
-                        <li class="has-sub" onclick="hideMenu()">
+                        <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-map-marker-alt"></i>EPIN</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a id="generateepin" href="epin-generation.html">Genrate EPIN</a>
+                                    <a id="generateepinmobile" href="epin-generation.html">Genrate EPIN</a>
                                 </li>
                                 <li>
                                     <a href="available-epin.html">Available EPIN</a>
@@ -174,7 +183,7 @@
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>                           
                         </li>
 
-                        <li class="has-sub" onclick="hideMenu()">
+                        <li class="has-sub" >
                             <a class="js-arrow" href="#">
                                 <i class="fa fa-user"></i>Members</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
@@ -207,7 +216,7 @@
                             </ul>
                         </li>
 
-                        <li class="has-sub" onclick="hideMenu()">
+                        <li class="has-sub" >
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-map-marker-alt"></i>EPIN</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
@@ -419,6 +428,8 @@
    <!-- <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script> -->
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript" src="node_modules/file-saverjs/FileSaver.min.js"></script>
+<script type="text/javascript" src="node_modules/tableexport/dist/js/tableexport.min.js"></script>
     <!-- Main JS-->
     <script src="js/main.js"></script>
     <script src="js/controllers/connection.js"></script>
@@ -430,7 +441,7 @@
      <script>
     
          $(document).ready(function() {
-             $('#epins').DataTable();
+            // $('#epins').DataTable();
              Epin.fetch();
         });
      </script>

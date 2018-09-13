@@ -122,6 +122,8 @@ var Epin = {
                 }
                 
                 document.getElementById('epins').appendChild(tbody);
+
+                $("#epins").tableExport({formats: ["xls"], position: 'top'    });
             }
             
         }

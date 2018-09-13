@@ -108,15 +108,38 @@ var fetchLevelDownline = function(){
                 }
                 tr.appendChild(td8);
                 
-                var td9 = document.createElement('td');
+               /* var td9 = document.createElement('td');
                 var textnode9 = document.createTextNode(response.users[i].statusId);
                 td9.appendChild(textnode9);
+                tr.appendChild(td9); */
+
+                var td9 = document.createElement('td');
+                var status;
+                if(response.users[i].statusId==1)
+                   status = 'Active';
+                if(response.users[i].statusId==2)
+                   status = 'Inactive';
+                if(response.users[i].statusId==3)
+                   status = 'Verification Pending';
+                if(response.users[i].statusId==4)
+                   status = 'Deleted';
+                var textnode9 = document.createTextNode(status);
+                td9.appendChild(textnode9);
                 tr.appendChild(td9);
+
+                var td10 = document.createElement('td');
+                var text = '<a href="profile.html#'+response.users[i].userId+'" class="btn btn-primary btn-sm" style="width:100%;margin:2px;">view</a>';
+                if(response.users[i].statusId==2)
+                    text += '<a href="activate.html#'+response.users[i].userId+'" class="btn btn-success btn-sm" style="margin:2px;width:100%;">activate</a>';
+                td10.innerHTML = text;
+                tr.appendChild(td10);
                 
                 tbody.appendChild(tr);
             }
             
             document.getElementById('downline').appendChild(tbody);
+
+            $("#downline").tableExport({formats: ["xls"], position: 'top'    });
         }
         
     }
@@ -228,15 +251,38 @@ var fetchDirectDownline = function(){
                 }
                 tr.appendChild(td8);
                 
-                var td9 = document.createElement('td');
+                /*var td9 = document.createElement('td');
                 var textnode9 = document.createTextNode(response.users[i].statusId);
                 td9.appendChild(textnode9);
+                tr.appendChild(td9);*/
+
+                var td9 = document.createElement('td');
+                var status;
+                if(response.users[i].statusId==1)
+                   status = 'Active';
+                if(response.users[i].statusId==2)
+                   status = 'Inactive';
+                if(response.users[i].statusId==3)
+                   status = 'Verification Pending';
+                if(response.users[i].statusId==4)
+                   status = 'Deleted';
+                var textnode9 = document.createTextNode(status);
+                td9.appendChild(textnode9);
                 tr.appendChild(td9);
+
+                
+                var td10 = document.createElement('td');
+                var text = '<a href="profile.html#'+response.users[i].userId+'" class="btn btn-primary btn-sm" style="width:100%;margin:2px;">view</a>';
+                td10.innerHTML = text;
+                tr.appendChild(td10);
+              
                 
                 tbody.appendChild(tr);
             }
             
             document.getElementById('downline').appendChild(tbody);
+
+            $("#downline").tableExport({formats: ["xls"],position: 'top'    });
         }
         
     }

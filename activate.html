@@ -62,12 +62,12 @@
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>                           
                         </li>
 
-                        <li class="has-sub" onclick="hideMenu()">
+                        <li class="has-sub" >
                             <a class="js-arrow" href="#">
                                 <i class="fa fa-user"></i>Members</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a id="all-members" href="all-members.html">All Members</a>
+                                    <a id="all-members-mobile" href="all-members.html">All Members</a>
                                 </li>
                                 <li>
                                     <a href="addmember.html">Add New Member</a>
@@ -95,12 +95,12 @@
                             </ul>
                         </li>
 
-                        <li class="has-sub" onclick="hideMenu()">
+                        <li class="has-sub" >
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-map-marker-alt"></i>EPIN</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a id="generateepin" href="epin-generation.html">Genrate EPIN</a>
+                                    <a id="generateepinmobile" href="epin-generation.html">Genrate EPIN</a>
                                 </li>
                                 <li>
                                     <a href="available-epin.html">Available EPIN</a>
@@ -174,7 +174,7 @@
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>                           
                         </li>
 
-                        <li class="has-sub" onclick="hideMenu()">
+                        <li class="has-sub" >
                             <a class="js-arrow" href="#">
                                 <i class="fa fa-user"></i>Members</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
@@ -207,7 +207,7 @@
                             </ul>
                         </li>
 
-                        <li class="has-sub" onclick="hideMenu()">
+                        <li class="has-sub" >
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-map-marker-alt"></i>EPIN</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
@@ -361,7 +361,7 @@
                                                     <label for="user-id" class=" form-control-label">User Id</label>
                                               </div>
                                               <div class="col-12 col-md-9">
-                                                    <input placeholder="User Id" type="password" id="user-id" class="form-control">                                                        
+                                                    <input placeholder="User Id" type="text" id="user-id" class="form-control">                                                        
                                                     <small class="form-text text-muted" id="user-id"></small>
                                                </div>
                                         </div>
@@ -422,6 +422,10 @@
 
     <script>
             (function(){
+
+                var id = window.location.href.split("#")[1];
+
+                document.getElementById("user-id").value = id;
                 
                 Epin.fetchUnused().then(function(data){
                     
@@ -439,18 +443,6 @@
                 
             })();
     </script>
-
-<script>
-    if(sessionStorage.getItem('userRole')=='Admin'){
-        document.getElementById('generateepin').style.display='block';
-    }else{
-        document.getElementById('generateepin').style.display='none';
-
-    }
-
-</script>
-    
-     
 
 </body>
 
